@@ -1,69 +1,17 @@
 "use client";
 
-import { FaMasksTheater } from "react-icons/fa6";
-import { FaArrowRight } from "react-icons/fa";
+import testimonials, { Review } from "@/lib/testimonials";
 import Image from "next/image";
 import Link from "next/link";
+import { FaArrowRight } from "react-icons/fa";
+import { FaMasksTheater } from "react-icons/fa6";
 
-interface Review {
-  id: number;
-  name: string;
-  role: string;
-  company: string;
-  avatar: string;
-  message: string;
-  timestamp: string;
-}
-
-const testimonials: Review[] = [
-  {
-    id: 1,
-    name: "Sarah Johnson",
-    role: "Product Manager",
-    company: "InnovateLabs",
-    avatar: "/avatars/client2.jpg",
-    message:
-      "Working with you has been a game-changer for our platform. Your technical expertise and problem-solving skills are outstanding!",
-    timestamp: "1 week ago",
-  },
-  {
-    id: 2,
-    name: "Alex Chen",
-    role: "CTO",
-    company: "TechFlow",
-    avatar: "/avatars/client1.jpg",
-    message:
-      "Incredible attention to detail and a true professional. The project was delivered ahead of schedule with exceptional quality.",
-    timestamp: "2 weeks ago",
-  },
-  {
-    id: 3,
-    name: "Emily Rodriguez",
-    role: "Founder",
-    company: "DesignCraft",
-    avatar: "/avatars/client3.jpg",
-    message:
-      "The UI/UX improvements you made to our application have received amazing feedback from our users. Highly recommended!",
-    timestamp: "3 days ago",
-  },
-  {
-    id: 4,
-    name: "Michael Park",
-    role: "Lead Developer",
-    company: "CodeCraft",
-    avatar: "/avatars/client4.jpg",
-    message:
-      "Your code quality and documentation are exceptional. Made the handover process smooth and efficient.",
-    timestamp: "5 days ago",
-  },
-];
-
-const ReviewBubble = ({ review }: { review: Review }) => {
+export const ReviewBubble = ({ review }: { review: Review }) => {
   return (
     <div className="flex gap-3 items-start p-4 rounded-xl transition-colors duration-300 hover:bg-[#1a1a1a]/50">
       <div className="relative size-5 rounded-full overflow-hidden bg-purple-500/20">
         <Image
-          src={review.avatar}
+          src={review.avatar || "/avatar.png"}
           alt={review.name}
           fill
           className="object-cover"

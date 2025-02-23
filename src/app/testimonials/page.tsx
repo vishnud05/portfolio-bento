@@ -12,69 +12,9 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-
-interface Testimonial {
-  id: number;
-  name: string;
-  role: string;
-  company: string;
-  message: string;
-  avatar: React.ReactNode;
-  timestamp: string;
-}
-
-const testimonials: Testimonial[] = [
-  {
-    id: 1,
-    name: "Sarah Chen",
-    role: "Lead Designer",
-    company: "DesignCraft",
-    message:
-      "This platform has completely transformed how we handle our design workflows. The intuitive interface and powerful features have made our team significantly more productive.",
-    avatar: <User className="w-6 h-6" />,
-    timestamp: "2 hours ago",
-  },
-  {
-    id: 2,
-    name: "James Wilson",
-    role: "CTO",
-    company: "TechFlow",
-    message:
-      "I've used many similar tools before, but none have matched the level of sophistication and ease of use that this solution provides. It's become an essential part of our tech stack.",
-    avatar: <User className="w-6 h-6" />,
-    timestamp: "5 hours ago",
-  },
-  {
-    id: 3,
-    name: "Emily Rodriguez",
-    role: "Product Manager",
-    company: "InnovateLabs",
-    message:
-      "The attention to detail in every feature is remarkable. Our team's collaboration has improved dramatically since we started using this platform.",
-    avatar: <User className="w-6 h-6" />,
-    timestamp: "1 day ago",
-  },
-  {
-    id: 4,
-    name: "Michael Chang",
-    role: "Senior Developer",
-    company: "CodeCraft",
-    message:
-      "As a developer, I appreciate the robust architecture and clean implementation. It's rare to find a solution that's both powerful and maintainable.",
-    avatar: <User className="w-6 h-6" />,
-    timestamp: "2 days ago",
-  },
-  {
-    id: 5,
-    name: "Lisa Thompson",
-    role: "UX Researcher",
-    company: "UserFirst",
-    message:
-      "The user-centric approach is evident in every interaction. It's been a game-changer for our research and design process.",
-    avatar: <User className="w-6 h-6" />,
-    timestamp: "3 days ago",
-  },
-];
+import testimonials from "@/lib/testimonials";
+import Image from "next/image";
+import { ReviewBubble } from "@/components/ReviewsSection";
 
 export default function TestimonialPage() {
   useEffect(() => {
@@ -117,43 +57,7 @@ export default function TestimonialPage() {
         {/* Testimonials Container */}
         <div className=" p-6 h-[650px] overflow-y-auto scroll-smooth">
           {testimonials.map((testimonial, index) => (
-            <div
-              key={testimonial.id}
-              className={cn(
-                "testimonial  transition-all duration-500 ease-out transform translate-y-4 mb-6",
-                index % 2 === 0 ? "flex justify-start" : "flex justify-end"
-              )}
-            >
-              <div
-                className={cn(
-                  "flex max-w-[80%] gap-4",
-                  index % 2 === 0 ? "flex-row" : "flex-row-reverse"
-                )}
-              >
-                <div className="flex-shrink-0">{testimonial.avatar}</div>
-                <div
-                  className={cn(
-                    "bg-black rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow",
-                    index % 2 === 0 ? "rounded-tl-none" : "rounded-tr-none"
-                  )}
-                >
-                  <div className="flex items-baseline justify-between mb-2">
-                    <div>
-                      <h3 className="text-text font-semibold">
-                        {testimonial.name}
-                      </h3>
-                      <p className="text-gray-400 text-sm">
-                        {testimonial.role} at {testimonial.company}
-                      </p>
-                    </div>
-                    <span className="text-xs text-gray-500">
-                      {testimonial.timestamp}
-                    </span>
-                  </div>
-                  <p className="text-gray-400 text-sm">{testimonial.message}</p>
-                </div>
-              </div>
-            </div>
+            <ReviewBubble key={index} review={testimonial} />
           ))}
         </div>
       </div>

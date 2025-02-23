@@ -1,4 +1,5 @@
 import { Clock, Globe, PenTool } from "lucide-react";
+import Link from "next/link";
 import { FaDownload } from "react-icons/fa";
 import { FaCalendar, FaCircleDot, FaRobot } from "react-icons/fa6";
 import { IoLocation } from "react-icons/io5";
@@ -43,9 +44,12 @@ const ProfileSection = () => {
             </h1>
             <div className="flex items-center gap-2 text-sm text-text">
               <p className="hidden md:block">Resume</p>
-              <button className="text-text p-3 rounded-lg bg-[#1f1f10]">
+              <Link
+                href={process.env.RESUME_URL || ""}
+                className="text-text p-3 rounded-lg bg-[#1f1f10]"
+              >
                 <FaDownload size={16} />
-              </button>
+              </Link>
             </div>
           </div>
           <div className="">
