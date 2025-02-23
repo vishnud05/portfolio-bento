@@ -57,7 +57,7 @@ const ProfileSection = () => {
               Vishnu Dev Aggarwal
             </h1>
             <p className="text-text mt-2">
-              I'm a <span className="text-accent">Software Developer</span>
+              I&apos;m a <span className="text-accent">Software Developer</span>
             </p>
           </div>
         </div>
