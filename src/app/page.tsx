@@ -4,8 +4,8 @@ import ProfileSection from "@/components/ProfileSection";
 import Project from "@/components/project";
 import ReviewsSection from "@/components/ReviewsSection";
 import SkillsSection from "@/components/SkillsSection";
-import Socials from "@/components/Socials";
-import Workflow from "@/components/Workflow";
+import Socials from "@/components/socials";
+import Workflow from "@/components/workflow";
 import client from "@/lib/contentfulClient";
 import { ArrowRight, PenBox } from "lucide-react";
 
