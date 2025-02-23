@@ -29,9 +29,9 @@ export function ProjectCard({
 
   return (
     <div
-      onClick={() => {
-        router.push(`/projects/${id}`);
-      }}
+      // onClick={() => {
+      //   router.push(`/projects/${id}`);
+      // }}
       className="max-w-xs w-full group/card hover:scale-[102%] transition-all duration-300"
     >
       <div
