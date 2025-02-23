@@ -27,7 +27,7 @@ const workProcess = [
 ];
 const Workflow = () => {
   return (
-    <>
+    <div className="flex-1 bg-[#141414] rounded-lg hover:scale-[102%] transition-all duration-300 shadow-xl border-2 border-gray-600/20 cursor-pointer p-2">
       <div className="flex flex-col justify-center items-center gap-2 p-2 border-b-2 border-gray-600/20">
         <h2 className="text-muted text-xs flex  gap-1">
           <PiShootingStarFill size={16} className="text-accent" />
@@ -35,7 +35,7 @@ const Workflow = () => {
         </h2>
         <h1 className="text-sm">Workflow Highlights</h1>
       </div>
-      <ul className="flex-1 flex flex-col justify-center items-center gap-1">
+      <ul className="flex-1 flex flex-col justify-start items-center gap-1 overflow-hidden">
         {workProcess.map((item, index) => (
           <li
             key={index}
@@ -48,7 +48,7 @@ const Workflow = () => {
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 };
 export default Workflow;
